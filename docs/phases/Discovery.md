@@ -12,7 +12,7 @@ Convert an initial problem statement into a validated, FAR-qualified (Factual, A
 - States assumptions and explicitly excludes out‑of‑scope areas.
 
 ## Output Artifact
-Location: thoughts/<problem-short-name>/discovery.md  
+Location: thoughts/[problem-short-name]/discovery.md  
 No frontmatter.  
 Mandatory heading structure (all H2 under an H1 title):
 1. Problem Context  
@@ -24,7 +24,7 @@ Mandatory heading structure (all H2 under an H1 title):
 7. Assumptions  
 8. Out of Scope  
 
-H1 Title Pattern: <TICKET-ID> Discovery (if a ticket ID exists; otherwise Use Case Discovery).
+H1 Title Pattern: [TICKET-ID] Discovery (if a ticket ID exists; otherwise Use Case Discovery).
 
 ## Section Definitions
 
