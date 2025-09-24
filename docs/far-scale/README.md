@@ -9,7 +9,7 @@ The FAR Scale is a lightweight rubric to make prompts and outputs more reliable 
 Two variants are included in this folder:
 
 - Generic FAR Scale for research, content, and strategy: [`FAR-Scale-Generic.md`](./FAR-Scale-Generic.md)
-- Codebase Research FAR Scale tailored to software work: [`FAR-Scale-for-Code.md`](./FAR-Scale-for-Code.md)
+- Codebase Discovery FAR Scale tailored to software work: [`FAR-Scale-for-Code.md`](./FAR-Scale-for-Code.md)
 
 Use the Generic scale when you’re asking for facts, analysis, or content. Use the Code scale when you’re debugging, changing code, or validating engineering claims.
 
@@ -56,7 +56,7 @@ Deliver:
 ### B. Codebase FAR self‑check (debug/fix/PR)
 
 ```
-You are working in this repo: [name/link]. Use the FAR Scale for Codebase Research: https://…/docs/far-scale/FAR-Scale-for-Code.md (or paste rubric).
+You are working in this repo: [name/link]. Use the FAR Scale for Codebase Discovery: https://…/docs/far-scale/FAR-Scale-for-Code.md (or paste rubric).
 
 Task:
 - [Bug/feature request]
@@ -106,7 +106,7 @@ Tip: Make the threshold explicit in your prompt: “Do not finalize or proceed u
 
 ## Example workflows
 
-### 1) Research task (Generic)
+### 1) Discovery task (Generic)
 
 1. Ask for a summary and require citations.  
 2. Model self‑scores; it flags that a key claim lacks a primary source (Factual=2).  

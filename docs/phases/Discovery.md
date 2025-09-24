@@ -1,7 +1,7 @@
-# Research
+# Discovery
 
 ## Purpose
-Establish a high‑fidelity, action‑ready understanding of a problem (ticket / user story / change request) by clarifying scope, mapping affected code surfaces, gathering internal and external technical context, and synthesizing it into a single durable Markdown artifact for the Plan phase. Goal: remove ambiguity before any solutioning.
+Establish a high‑fidelity, action‑ready understanding of a problem (ticket / user story / change request) by clarifying scope, mapping affected code surfaces, gathering internal and external technical context, and synthesizing it into a single durable Markdown artifact for the Design phase. Goal: remove ambiguity before any solutioning.
 
 ## Primary Objective
 Convert an initial problem statement into a validated, FAR-qualified (Factual, Actionable, Relevant) research document that:
@@ -12,7 +12,7 @@ Convert an initial problem statement into a validated, FAR-qualified (Factual, A
 - States assumptions and explicitly excludes out‑of‑scope areas.
 
 ## Output Artifact
-Location: thoughts/<problem-short-name>/research.md  
+Location: thoughts/<problem-short-name>/discovery.md  
 No frontmatter.  
 Mandatory heading structure (all H2 under an H1 title):
 1. Problem Context  
@@ -24,7 +24,7 @@ Mandatory heading structure (all H2 under an H1 title):
 7. Assumptions  
 8. Out of Scope  
 
-H1 Title Pattern: <TICKET-ID> Research (if a ticket ID exists; otherwise Use Case Research).
+H1 Title Pattern: <TICKET-ID> Discovery (if a ticket ID exists; otherwise Use Case Discovery).
 
 ## Section Definitions
 
@@ -53,7 +53,7 @@ Rules:
 - Scale: 0–5 (see linked file)
 - Pass criteria: F >= 4, A >= 3, R >= 3, Mean(F,A,R) >= 4.00 (2 decimal precision)
 - On failure: restart full workflow (clarify → … → FAR)
-- Scoring actor: Research Agent (auto) + optional human override
+- Scoring actor: Discovery Agent (auto) + optional human override
 - Mean: arithmetic average to 2 decimals (no rounding beyond 2)
 
 ### Testing Strategy
@@ -119,7 +119,7 @@ flowchart TD
   F --> G[Apply FAR Scoring]
   G --> H{Pass FAR Scale?}
   H -- No --> B
-  H -- Yes --> I[Done: Research Complete]
+  H -- Yes --> I[Done: Discovery Complete]
 ```
 
 ## Workflow Parallel (Claude Code, Sub Agents)
@@ -135,7 +135,7 @@ flowchart TD
   F --> G[Apply FAR Scoring]
   G --> H{Pass FAR Scale?}
   H -- No --> B
-  H -- Yes --> I[Done: Research Complete]
+  H -- Yes --> I[Done: Discovery Complete]
 ```
 
 Loop Trigger:
@@ -163,9 +163,9 @@ F: 4  A: 3  R: 4  Mean: 3.67  --> FAIL (Mean < 4.00)  (Restart)
 F: 4  A: 4  R: 4  Mean: 4.00  --> PASS
 ```
 
-## Handoff Contract to Plan Phase
-Plan phase receives:
-- Final research.md
+## Handoff Contract to Design Phase
+Design phase receives:
+- Final discovery.md
 - FAR pass indicators
 - Set of normalized code references
 - Open assumptions requiring validation tasks

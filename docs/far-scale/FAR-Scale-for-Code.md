@@ -1,4 +1,4 @@
-## FAR Scale (Codebase Research)
+## FAR Scale (Codebase Discovery)
 
 ### Factual — “Is this evidenced in the code/system?”
 - 0 — Fabricated
