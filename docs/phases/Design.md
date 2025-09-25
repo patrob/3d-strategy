@@ -75,16 +75,19 @@ Detailed testing strategy for implementation validation:
 - Regression test considerations
 
 ### FACTS Scale Output
-Summarized scoring table + pass/fail decision. For detailed rubric link:
-[See FACTS Scale](../facts-scale/FACTS-Scale-for-Design.md)
+Use the **FACTS Scale** (Feasibility, Atomicity, Clarity, Testability, Size) for design validation:
+- **Feasibility**: Tasks are achievable with available resources and skills
+- **Atomicity**: Each task has single, clear responsibility
+- **Clarity**: Task descriptions provide unambiguous direction
+- **Testability**: Completion criteria are verifiable
+- **Size**: Task boundaries are well-defined and appropriately sized
 
-Rules:
-- Dimensions: Feasibility (F), Atomicity (A), Clarity (C), Testability (T), Size (S)
-- Scale: 05 (see linked file)
-- Pass criteria: Mean(F,A,C,T,S) >= 3.00 (2 decimal precision)
-- On failure: restart full workflow (refine ’ validate ’ FACTS)
-- Scoring actor: Design Agent (auto) + optional human override
-- Mean: arithmetic average to 2 decimals (no rounding beyond 2)
+Apply the FACTS Scale for Design phase validation. Summarized scoring table + pass/fail decision required.
+
+For complete FACTS Scale criteria, scoring rules, and examples: [../scales/facts-scale.md](../scales/facts-scale.md)
+
+*For code validation in the previous phase, see the FAR Scale in Discovery.md*
+
 
 ### Dependencies & Sequencing
 - Inter-task dependencies within and across phases
@@ -151,6 +154,17 @@ flowchart TD
 - **Sizing**: Each task should be 1-8 hours, with phases balanced for similar effort
 - **Context**: Each task includes enough context for AI agent to execute independently
 
+## Failure Handling
+
+Design phase failures are classified and handled according to FACTS Scale scores:
+- **Minor Failure**: FACTS scores 2.8-2.9 (single iteration task refinement)
+- **Major Failure**: FACTS scores 2.0-2.7 (return to Discovery phase)
+- **Critical Failure**: FACTS scores <2.0 (leadership escalation)
+
+Additional triggers include task breakdown failure (>8 hour tasks) and dependency deadlock (circular dependencies).
+
+For complete failure handling procedures, escalation timelines, recovery paths, and postmortem requirements, see: [Failure Handling Framework](../README.md#failure-handling-framework)
+
 ## Quality Gates Before Completion
 - Every task maps to specific code locations or clear creation instructions
 - All tasks are atomic and independently verifiable
@@ -158,6 +172,7 @@ flowchart TD
 - Testing strategy covers all new functionality
 - FACTS table present with numeric values + computed mean
 - Rollback strategy defined for each implementation phase
+- Failure handling procedures documented if FACTS validation fails
 
 ## Minimal FACTS Output Example
 
@@ -189,4 +204,4 @@ Delivery phase receives:
 - Creating tasks too large for single AI agent sessions
 
 ## Reference
-FACTS rubric: [FACTS Scale for Design](../facts-scale/FACTS-Scale-for-Design.md)
+FACTS rubric: [FACTS Scale](../scales/facts-scale.md)

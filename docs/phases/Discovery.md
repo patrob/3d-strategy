@@ -45,16 +45,16 @@ Representation: fenced code block, one reference per line (see “Code Reference
 - Use triple backtick code fences inside this section; label language.
 
 ### FAR Scale Output
-Summarized scoring table + pass/fail decision. For detailed rubric link:
-[See FAR Scale](../far-scale/FAR-Scale-for-Code.md)
+Use the **FAR Scale** (Factual, Actionable, Relevant) for code-focused validation during Discovery:
+- **Factual**: Evidence-based claims with verifiable code references
+- **Actionable**: Clear next steps for implementation
+- **Relevant**: Solution addresses core user needs and constraints
 
-Rules:
-- Dimensions: Factual (F), Actionable (A), Relevant (R)
-- Scale: 0–5 (see linked file)
-- Pass criteria: F >= 4, A >= 3, R >= 3, Mean(F,A,R) >= 4.00 (2 decimal precision)
-- On failure: restart full workflow (clarify → … → FAR)
-- Scoring actor: Discovery Agent (auto) + optional human override
-- Mean: arithmetic average to 2 decimals (no rounding beyond 2)
+Apply the FAR Scale for Discovery phase validation. Summarized scoring table + pass/fail decision required.
+
+For complete FAR Scale criteria, scoring rules, and examples: [../scales/far-scale.md](../scales/far-scale.md)
+
+*For design validation in the next phase, see the FACTS Scale in Design.md*
 
 ### Testing Strategy
 Early hypotheses about:
@@ -147,11 +147,21 @@ Any FAR dimension failing threshold → restart at Clarify (retaining previously
   - File hashes for referenced areas change
   - Assumptions invalidated mid-loop
 
+## Failure Handling
+
+Discovery phase failures are classified and handled according to FAR Scale scores:
+- **Minor Failure**: FAR scores 3.5-3.9 (single iteration refinement)
+- **Major Failure**: FAR scores 2.0-3.4 (restart Discovery phase)
+- **Critical Failure**: FAR scores <2.0 (leadership escalation)
+
+For complete failure handling procedures, escalation timelines, recovery paths, and postmortem requirements, see: [Failure Handling Framework](../README.md#failure-handling-framework)
+
 ## Quality Gates Before Completion
 - Every code reference resolves (exists + line within bounds).
 - No snippet exceeds necessary minimal context (≤ ~40 lines unless justified).
 - All assumptions have either a planned validation step or explicit deferral note.
 - FAR table present with numeric values + computed mean.
+- Failure handling procedures documented if FAR validation fails.
 
 ## Minimal FAR Output Example
 
@@ -178,4 +188,4 @@ Design phase receives:
 - Estimating delivery timelines
 
 ## Reference
-FAR rubric: [FAR Scale for Code](../far-scale/FAR-Scale-for-Code.md)
+FAR rubric: [FAR Scale](../scales/far-scale.md)
