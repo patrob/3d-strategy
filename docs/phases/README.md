@@ -47,27 +47,71 @@ Gating Checklist
 ----------------
 Use these to confirm you are *truly* done with a phase:
 
-Discovery → Design:
-- Problem statement: specific, user-centered, testable.
-- Success definition: leading + lagging metrics, initial targets or directional hypotheses.
-- Option set documented with tradeoffs (including “do nothing / defer”).
-- Recommended direction + rationale.
-- Critical unknowns & assumptions explicitly listed.
+## Discovery → Design Success Criteria
 
-Design → Delivery:
-- Scope sliced into milestones / increments (each demonstrable).
-- Architecture / approach sketched (just enough to reduce rework risk).
-- Resource & dependency map (people, data, tooling, external).
-- Risks ranked w/ mitigations or acceptance rationale.
-- Metrics instrumentation approach (where + how captured) agreed.
-- Definition of Done (per increment + overall) captured.
+**Required Artifacts:**
+- Problem statement (50-200 words) validated against [FAR scale](../far-scale/README.md) ≥80%
+- 3-5 user stories with specific acceptance criteria
+- Technical constraints documented (performance, security, integration requirements)
+- Resource requirements estimated (time, people, external dependencies)
+- Option set with explicit tradeoffs (including "do nothing" analysis)
 
-Delivery → Close / Next:
-- Agreed scope delivered OR recalibrated with stakeholder sign‑off.
-- Metrics collected + compared to targets / hypotheses.
-- Post-impact summary: what worked, what missed, key learnings.
-- Backlog triage: follow-on items categorized (Now / Next / Later / Drop).
-- Documentation & handoff (if ongoing operations needed) complete.
+**Validation Checkpoints:**
+- [ ] Problem statement reviewed by 2+ team members outside core team
+- [ ] User stories directly map to measurable business value
+- [ ] Technical feasibility confirmed by technical lead with implementation experience
+- [ ] FAR scale scoring: Factual≥8, Actionable≥8, Relevant≥8 (out of 10)
+- [ ] Critical unknowns identified with investigation plans
+
+**Failure Triggers:**
+- FAR scale scores <6 after 2 revision attempts
+- Unable to define measurable acceptance criteria for user stories
+- Resource requirements exceed project constraints by >50%
+- Technical constraints create circular dependencies
+
+## Design → Delivery Success Criteria
+
+**Required Artifacts:**
+- Task breakdown with all individual tasks <4 hours of effort
+- Dependency graph showing task relationships and critical path
+- Interface definitions for all external integrations
+- Testing strategy with specific coverage targets (>80% for critical paths)
+- Risk register with mitigation plans for high-probability impacts
+
+**Validation Checkpoints:**
+- [ ] All tasks have clear, testable definition of done
+- [ ] Critical path identified and timeline validated by implementer
+- [ ] Risk mitigation plans assigned to specific owners with dates
+- [ ] [FACTS scale](../facts-scale/FACTS-Scale-for-Design.md) scoring: F≥8, A≥8, C≥8, T≥8, S≥8
+- [ ] Architecture decisions documented with rationale
+
+**Failure Triggers:**
+- Any individual task >8 hours (return to Discovery for problem decomposition)
+- FACTS scale scores <6 after 2 revision attempts
+- Circular dependencies discovered in task graph
+- Critical path >150% of original timeline estimate
+
+## Delivery → Close/Next Success Criteria
+
+**Required Artifacts:**
+- All agreed scope delivered OR formal scope change approved by stakeholders
+- Metrics dashboard with baseline vs. actual performance data
+- Post-delivery review documenting what worked, what missed, key learnings
+- Backlog triage with items categorized (Now/Next/Later/Drop) and ownership
+- Production handoff documentation (if ongoing operations required)
+
+**Validation Checkpoints:**
+- [ ] Deliverables pass acceptance criteria from Design phase
+- [ ] Metrics targets achieved OR variance explained with stakeholder agreement
+- [ ] Performance meets technical constraints defined in Discovery
+- [ ] Security and integration requirements validated in production environment
+- [ ] Knowledge transfer completed to operations/maintenance team
+
+**Failure Triggers:**
+- 3+ consecutive delivery attempts fail validation criteria
+- Critical path blocked >2 days without resolution plan
+- Security or data integrity issues discovered in production
+- Metrics show >25% degradation from baseline without mitigation plan
 
 Core Artifacts by Phase
 -----------------------
@@ -121,16 +165,68 @@ Decision Logging
 Capture meaningful direction changes as short, immutable entries:
 `YYYY-MM-DD | Decision | Context | Alternatives | Rationale | Owner`
 
+Failure Handling Framework
+---------------------------
+Each phase includes comprehensive failure handling with specific criteria, escalation paths, and recovery procedures:
+
+### Failure Classification System
+**Minor Failures**: Single iteration fixes, local guidance needed
+- Discovery: FAR scores 3.5-3.9
+- Design: FACTS scores 2.8-2.9
+- Delivery: Individual task quality gate failures
+
+**Major Failures**: Phase restart required, stakeholder consultation
+- Discovery: FAR scores 2.0-3.4, missing critical context
+- Design: FACTS scores 2.0-2.7, task breakdown insufficient
+- Delivery: 2+ consecutive task failures, critical path blocked >4 hours
+
+**Critical Failures**: Leadership escalation, project viability assessment
+- Discovery: FAR scores <2.0, fundamental problem misunderstanding
+- Design: FACTS scores <2.0, circular dependencies detected
+- Delivery: 3+ consecutive failures, security/integrity issues, >2 day blocks
+
+### Escalation Timeline
+| Failure Level | Response Time | Action Required | Decision Authority |
+|---------------|---------------|-----------------|-------------------|
+| Minor | 1-4 hours | Local revision/consultation | Team lead |
+| Major | 4-24 hours | Phase restart with enhanced context | Technical lead |
+| Critical | 2-4 hours | Leadership escalation, project pause | Engineering manager |
+
+### Recovery Paths
+**Phase Transitions on Failure**:
+- Discovery ← Design: When design reveals insufficient problem understanding
+- Discovery ← Delivery: When implementation reveals fundamental scope issues
+- Design ← Delivery: When task breakdown proves inadequate for implementation
+
+**Preservation Rules**:
+- Always preserve validated artifacts from higher phases
+- Pass context about specific failures to inform restart
+- Document lessons learned for process improvement
+
+### Postmortem Requirements
+Critical failures generate standardized postmortem documents:
+- **discovery-postmortem.md**: Problem understanding gaps, context needs
+- **design-postmortem.md**: Task breakdown analysis, architectural concerns
+- **delivery-postmortem.md**: Implementation blockers, technical constraints
+
+This framework provides complete failure handling guidance for all phases. Individual phase documents reference this centralized framework for consistent application.
+
 Anti-Patterns to Avoid
 ----------------------
-- Skipping Discovery because “solution is obvious” (later rework proves it wasn’t).
+- Skipping Discovery because "solution is obvious" (later rework proves it wasn't).
 - Over-specifying Design (faux certainty) in high-unknown spaces.
 - Giant Delivery batch with no intermediate validation.
 - Metrics added after shipping (missed baselines).
+- Proceeding with failed validation scores to "make progress" (compounds problems).
+- Treating all failures the same (minor issues get over-escalated, critical issues get under-addressed).
 
 Related Docs
 ------------
-See higher-level strategy material in `../far-scale/` for scaling principles and governance concepts that complement these phases.
+See validation frameworks that support phase quality gates:
+- Code validation criteria: [FAR Scale](../far-scale/README.md)
+- Design validation guidelines: [FACTS Scale](../facts-scale/FACTS-Scale-for-Design.md)
+
+These scales provide objective scoring criteria for phase transition decisions.
 
 License
 -------

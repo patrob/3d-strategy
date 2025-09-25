@@ -21,16 +21,18 @@ No output artifact under normal execution.
 - Implemented, tested, production-ready code
 - All build, lint, and test suites passing
 
-### Catastrophic Failure Output
-Location: thoughts/[problem-short-name]/delivery-postmortem.md
-Generated only when delivery cannot proceed due to blocking issues.
-Contents:
-- Failed task identification
-- Error messages and stack traces
-- Codebase state at failure point
-- Root cause analysis
-- Suggested 3D Strategy prompt for resolution
-- Remediation recommendations
+## Failure Handling
+
+Delivery phase failures are classified and handled according to task execution outcomes:
+- **Minor Failure**: Individual task quality gate failures (build/lint/test)
+- **Major Failure**: 2+ consecutive task failures or critical path blocked >4 hours
+- **Critical Failure**: 3+ consecutive failures, security issues, or >2 day blocks
+
+**Quality Gates**: Each task must pass build → lint → test before completion. Failed gates trigger appropriate failure response.
+
+**Catastrophic Failure Output**: Critical failures generate delivery-postmortem.md at thoughts/[problem-short-name]/delivery-postmortem.md
+
+For complete failure handling procedures, escalation timelines, recovery paths, and postmortem requirements, see: [Failure Handling Framework](../README.md#failure-handling-framework)
 
 ## Task Execution Strategy
 
@@ -97,30 +99,22 @@ For each phase in design.md:
 ## Implementation Workflow Diagram
 ```mermaid
 flowchart TD
-  A([Start: Design Document]) --> C[Parse Task List]
-  C --> D[Select Next Task]
-  D --> E[Implement Task]
-  E --> F[Run Build]
-  F --> G{Build Pass?}
-  G -- No --> H[Fix Build Issues]
-  H --> F
-  G -- Yes --> I[Run Lint]
-  I --> J{Lint Pass?}
-  J -- No --> K[Fix Lint Issues]
-  K --> I
-  J -- Yes --> L[Run Tests]
-  L --> M{Tests Pass?}
-  M -- No --> N[Fix Test Issues]
-  N --> L
-  M -- Yes --> O[Mark Task Complete]
-  O --> P{More Tasks?}
-  P -- Yes --> D
-  P -- No --> Q[Done: Delivery Complete]
-
-  E --> R{Catastrophic Failure?}
-  R -- Yes --> S[Generate Postmortem]
-  S --> T[Exit: Delivery Failed]
+  A([Start: Design Document]) --> B[Parse Task List]
+  B --> C[Select Next Task]
+  C --> D[Implement Task]
+  D --> E[Run Quality Gates<br/>Build → Lint → Test]
+  E --> F{Quality Gates Pass?}
+  F -- Yes --> G[Mark Task Complete]
+  F -- No --> H[Apply Failure Handling<br/>Per Centralized Framework]
+  H --> I{Continue or Escalate?}
+  I -- Continue --> E
+  I -- Escalate --> J[Return to Design/Discovery<br/>or Generate Postmortem]
+  G --> K{More Tasks?}
+  K -- Yes --> C
+  K -- No --> L[Done: Delivery Complete]
 ```
+
+*For detailed failure criteria, escalation procedures, and recovery paths, see [Failure Handling Framework](../README.md#failure-handling-framework)*
 
 ### Parallel Execution with Sub-Agents
 > **Note:** When using tools like Claude Code that support sub-agents, the workflow can be modified to execute independent tasks in parallel:
