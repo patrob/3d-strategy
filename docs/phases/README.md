@@ -60,7 +60,7 @@ Use these to confirm you are *truly* done with a phase:
 - [ ] Problem statement reviewed by 2+ team members outside core team
 - [ ] User stories directly map to measurable business value
 - [ ] Technical feasibility confirmed by technical lead with implementation experience
-- [ ] FAR scale scoring: Factual≥4, Actionable≥3, Relevant≥3, Mean≥4.00 (out of 5)
+- [ ] FAR scale scoring: Factual≥4, Actionable≥3, Relevant≥3 (out of 5), Mean≥4.00
 - [ ] Critical unknowns identified with investigation plans
 
 **Failure Triggers:**
