@@ -179,4 +179,4 @@ Delivery phase completes with:
 
 ## Reference
 Design artifact: thoughts/[problem-short-name]/design.md
-FACTS validation: [FACTS Scale for Design](../facts-scale/FACTS-Scale-for-Design.md)
+FACTS validation: [FACTS Scale for Design](../scales/facts-scale.md)

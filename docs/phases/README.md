@@ -50,7 +50,7 @@ Use these to confirm you are *truly* done with a phase:
 ## Discovery → Design Success Criteria
 
 **Required Artifacts:**
-- Problem statement (50-200 words) validated against [FAR scale](../far-scale/README.md) ≥80%
+- Problem statement (50-200 words) validated against [FAR scale](../scales/far-scale.md) (Mean ≥4.00)
 - 3-5 user stories with specific acceptance criteria
 - Technical constraints documented (performance, security, integration requirements)
 - Resource requirements estimated (time, people, external dependencies)
@@ -60,11 +60,11 @@ Use these to confirm you are *truly* done with a phase:
 - [ ] Problem statement reviewed by 2+ team members outside core team
 - [ ] User stories directly map to measurable business value
 - [ ] Technical feasibility confirmed by technical lead with implementation experience
-- [ ] FAR scale scoring: Factual≥8, Actionable≥8, Relevant≥8 (out of 10)
+- [ ] FAR scale scoring: Factual≥4, Actionable≥3, Relevant≥3, Mean≥4.00 (out of 5)
 - [ ] Critical unknowns identified with investigation plans
 
 **Failure Triggers:**
-- FAR scale scores <6 after 2 revision attempts
+- FAR scale scores <4.0 after 2 revision attempts
 - Unable to define measurable acceptance criteria for user stories
 - Resource requirements exceed project constraints by >50%
 - Technical constraints create circular dependencies
@@ -82,12 +82,12 @@ Use these to confirm you are *truly* done with a phase:
 - [ ] All tasks have clear, testable definition of done
 - [ ] Critical path identified and timeline validated by implementer
 - [ ] Risk mitigation plans assigned to specific owners with dates
-- [ ] [FACTS scale](../facts-scale/FACTS-Scale-for-Design.md) scoring: F≥8, A≥8, C≥8, T≥8, S≥8
+- [ ] [FACTS scale](../scales/facts-scale.md) scoring: Mean≥3.00 across all dimensions (out of 5)
 - [ ] Architecture decisions documented with rationale
 
 **Failure Triggers:**
 - Any individual task >8 hours (return to Discovery for problem decomposition)
-- FACTS scale scores <6 after 2 revision attempts
+- FACTS scale scores <3.0 after 2 revision attempts
 - Circular dependencies discovered in task graph
 - Critical path >150% of original timeline estimate
 
@@ -223,8 +223,8 @@ Anti-Patterns to Avoid
 Related Docs
 ------------
 See validation frameworks that support phase quality gates:
-- Code validation criteria: [FAR Scale](../far-scale/README.md)
-- Design validation guidelines: [FACTS Scale](../facts-scale/FACTS-Scale-for-Design.md)
+- Code validation criteria: [FAR Scale](../scales/far-scale.md)
+- Design validation guidelines: [FACTS Scale](../scales/facts-scale.md)
 
 These scales provide objective scoring criteria for phase transition decisions.
 
