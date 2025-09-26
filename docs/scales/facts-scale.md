@@ -99,22 +99,22 @@ The FACTS Scale validates Design phase outputs by measuring five critical dimens
 ### Size — "Is the task appropriately scoped?"
 
 **0 — Enormous**
-- 40+ hours, multiple sprints, cross-team coordination required
+- Multiple systems, cross-team coordination, requires comprehensive project planning
 
 **1 — Large**
-- 2-3 days of focused work, significant complexity or scope
+- Single feature spanning many files, multiple complex interconnected changes
 
 **2 — Medium**
-- 1-2 days, moderate complexity, standard development task
+- Feature with several related changes, moderate cross-cutting concerns
 
 **3 — Standard**
-- 4-8 hours, typical feature development or bug fix
+- Focused task with clear boundaries, typical development work
 
 **4 — Small**
-- 1-4 hours, straightforward implementation or minor change
+- Straightforward implementation, minimal scope, well-defined change
 
 **5 — Tiny**
-- < 1 hour, configuration change, simple addition, or obvious fix
+- Atomic unit: single file edit, configuration change, or simple command
 
 ## Scoring Format
 
@@ -141,7 +141,7 @@ F: 1  A: 4  C: 4  T: 4  S: 4  Mean: 3.40  --> FAIL (F < 3 indicates infeasible t
 ### Task Design Guidelines
 - **Single Responsibility**: Each task should accomplish exactly one objective
 - **Clear Boundaries**: Task completion should be unambiguously verifiable
-- **Appropriate Sizing**: Balance granularity with practical execution time (1-8 hours)
+- **Appropriate Sizing**: Balance granularity with atomic simplicity (single command calls, file edits, etc.)
 - **Dependency Clarity**: Make prerequisites explicit and non-circular
 - **Context Sufficiency**: Include enough information for independent execution
 

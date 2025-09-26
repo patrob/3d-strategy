@@ -72,7 +72,7 @@ Use these to confirm you are *truly* done with a phase:
 ## Design → Delivery Success Criteria
 
 **Required Artifacts:**
-- Task breakdown with all individual tasks <4 hours of effort
+- Task breakdown with all individual tasks as atomic units (single command calls, file edits, etc.)
 - Dependency graph showing task relationships and critical path
 - Interface definitions for all external integrations
 - Testing strategy with specific coverage targets (>80% for critical paths)
@@ -86,7 +86,7 @@ Use these to confirm you are *truly* done with a phase:
 - [ ] Architecture decisions documented with rationale
 
 **Failure Triggers:**
-- Any individual task >8 hours (return to Discovery for problem decomposition)
+- Any individual task too complex to be atomic (return to Discovery for problem decomposition)
 - FACTS scale scores <3.0 after 2 revision attempts
 - Circular dependencies discovered in task graph
 - Critical path >150% of original timeline estimate
@@ -178,7 +178,7 @@ Each phase includes comprehensive failure handling with specific criteria, escal
 **Major Failures**: Phase restart required, stakeholder consultation
 - Discovery: FAR scores 2.0-3.4, missing critical context
 - Design: FACTS scores 2.0-2.7, task breakdown insufficient
-- Delivery: 2+ consecutive task failures, critical path blocked >4 hours
+- Delivery: 2+ consecutive task failures, critical path blocked with no clear resolution
 
 **Critical Failures**: Leadership escalation, project viability assessment
 - Discovery: FAR scores <2.0, fundamental problem misunderstanding
@@ -188,9 +188,9 @@ Each phase includes comprehensive failure handling with specific criteria, escal
 ### Escalation Timeline
 | Failure Level | Response Time | Action Required | Decision Authority |
 |---------------|---------------|-----------------|-------------------|
-| Minor | 1-4 hours | Local revision/consultation | Team lead |
-| Major | 4-24 hours | Phase restart with enhanced context | Technical lead |
-| Critical | 2-4 hours | Leadership escalation, project pause | Engineering manager |
+| Minor | Same session | Local revision/consultation | Team lead |
+| Major | Same day | Phase restart with enhanced context | Technical lead |
+| Critical | Immediate | Leadership escalation, project pause | Engineering manager |
 
 ### Recovery Paths
 **Phase Transitions on Failure**:

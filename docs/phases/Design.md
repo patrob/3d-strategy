@@ -44,7 +44,7 @@ Each task must be:
 - Single responsibility (one clear objective)
 - Independently completable by an AI agent
 - Verifiable upon completion
-- Appropriately sized (1-8 hours of work)
+- Appropriately sized (atomic units like single file edits or command calls)
 
 Format:
 ```markdown
@@ -151,7 +151,7 @@ flowchart TD
 ## Task Sizing Guidelines
 - **Phase**: Logical grouping of related tasks (e.g., "Database Layer", "API Endpoints")
 - **Task**: Atomic unit of work with single responsibility
-- **Sizing**: Each task should be 1-8 hours, with phases balanced for similar effort
+- **Sizing**: Each task should be atomic (single file edits, command calls, etc.), with phases balanced for similar complexity
 - **Context**: Each task includes enough context for AI agent to execute independently
 
 ## Failure Handling
@@ -161,7 +161,7 @@ Design phase failures are classified and handled according to FACTS Scale scores
 - **Major Failure**: FACTS scores 2.0-2.7 (return to Discovery phase)
 - **Critical Failure**: FACTS scores <2.0 (leadership escalation)
 
-Additional triggers include task breakdown failure (>8 hour tasks) and dependency deadlock (circular dependencies).
+Additional triggers include task breakdown failure (non-atomic tasks) and dependency deadlock (circular dependencies).
 
 For complete failure handling procedures, escalation timelines, recovery paths, and postmortem requirements, see: [Failure Handling Framework](../README.md#failure-handling-framework)
 

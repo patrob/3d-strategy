@@ -25,8 +25,8 @@ No output artifact under normal execution.
 
 Delivery phase failures are classified and handled according to task execution outcomes:
 - **Minor Failure**: Individual task quality gate failures (build/lint/test)
-- **Major Failure**: 2+ consecutive task failures or critical path blocked >4 hours
-- **Critical Failure**: 3+ consecutive failures, security issues, or >2 day blocks
+- **Major Failure**: 2+ consecutive task failures or critical path blocked with no clear resolution
+- **Critical Failure**: 3+ consecutive failures, security issues, or extended blocks without resolution
 
 **Quality Gates**: Each task must pass build → lint → test before completion. Failed gates trigger appropriate failure response.
 

@@ -40,7 +40,7 @@ This repository documents the 3D Strategy methodology for engineering teams work
 
 2. **Validate**: Score your findings using [FAR scale](docs/scales/far-scale.md): Factual ≥4, Actionable ≥3, Relevant ≥3
 
-3. **Design**: Request: *"Break this into tasks <4 hours each. Validate each task is testable independently."*
+3. **Design**: Request: *"Break this into atomic tasks (single command calls, file edits, etc.). Validate each task is testable independently."*
 
 4. **Validate**: Check tasks against [FACTS scale](docs/scales/facts-scale.md): Mean ≥3.0 across all dimensions
 
