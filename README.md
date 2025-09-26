@@ -53,3 +53,5 @@ This repository documents the 3D Strategy methodology for engineering teams work
 1. Start with the [3D Strategy Phases overview](docs/phases/README.md) to understand the Discovery → Design → Delivery framework
 2. Apply the [Validation Scales](docs/scales/README.md) to improve the quality of your AI interactions and outputs
 3. Explore phase-specific documentation and example prompts for your preferred AI coding environment
+
+*Inspiration to work on this came from watching [this video](https://www.youtube.com/watch?v=IS_y40zY-hc).
