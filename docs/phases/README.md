@@ -86,7 +86,7 @@ Use these to confirm you are *truly* done with a phase:
 - [ ] Architecture decisions documented with rationale
 
 **Failure Triggers:**
-- Any individual task too complex to be atomic (return to Discovery for problem decomposition)
+- Any individual task too complex to be atomic (return to Research for problem decomposition)
 - FACTS scale scores <3.0 after 2 revision attempts
 - Circular dependencies discovered in task graph
 - Critical path >150% of original timeline estimate
@@ -108,7 +108,7 @@ Use these to confirm you are *truly* done with a phase:
 - [ ] Knowledge transfer completed to operations/maintenance team
 
 **Failure Triggers:**
-- 3+ consecutive delivery attempts fail validation criteria
+- 3+ consecutive implementation attempts fail validation criteria
 - Critical path blocked >2 days without resolution plan
 - Security or data integrity issues discovered in production
 - Metrics show >25% degradation from baseline without mitigation plan

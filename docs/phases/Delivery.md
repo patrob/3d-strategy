@@ -7,7 +7,7 @@ Execute the validated technical implementation plan from the Plan phase by syste
 Execute the Plan phase output by:
 - Implementing each atomic task in proper sequence or parallel groupings.
 - Validating build, lint, and test success after each task completion.
-- Tracking progress through checkbox completion in the design document.
+- Tracking progress through checkbox completion in the plan document.
 - Maintaining code quality standards throughout implementation.
 - Producing a fully functional solution ready for deployment.
 
