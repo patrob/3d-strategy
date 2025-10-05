@@ -1,6 +1,6 @@
-# FACTS Scale (Design Phase Validation)
+# FACTS Scale (Plan Phase Validation)
 
-The FACTS Scale validates Design phase outputs by measuring five critical dimensions of technical implementation plan quality. Task breakdowns must achieve a mean score of 3.00 or higher across all dimensions to proceed to the Delivery phase.
+The FACTS Scale validates Plan phase outputs by measuring five critical dimensions of technical implementation plan quality. Task breakdowns must achieve a mean score of 3.00 or higher across all dimensions to proceed to the Implement phase.
 
 ## Validation Rules
 
@@ -10,8 +10,8 @@ The FACTS Scale validates Design phase outputs by measuring five critical dimens
 - **Threshold**: Pass required for phase completion
 
 ### Failure Handling
-- **On Failure**: Restart full Design workflow (refine → validate → FACTS)
-- **Scoring Actor**: Design Agent (automated) with optional human override
+- **On Failure**: Restart full Plan workflow (refine → validate → FACTS)
+- **Scoring Actor**: Plan Agent (automated) with optional human override
 - **Mean Calculation**: Arithmetic average of F, A, C, T, S dimensions
 
 ## Scoring Dimensions

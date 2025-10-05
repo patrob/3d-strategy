@@ -1,10 +1,10 @@
-# Design
+# Plan
 
 ## Purpose
-Transform Discovery phase findings into a concrete, executable technical implementation plan with atomic tasks that can be performed by AI coding agents. Goal: create a validated sequence of actionable development tasks that bridge problem understanding to production-ready code delivery.
+Transform Research phase findings into a concrete, executable technical implementation plan with atomic tasks that can be performed by AI coding agents. Goal: create a validated sequence of actionable development tasks that bridge problem understanding to production-ready code delivery.
 
 ## Primary Objective
-Convert Discovery phase output into a FACTS-qualified technical implementation plan that:
+Convert Research phase output into a FACTS-qualified technical implementation plan that:
 - Breaks down the solution into atomic, single-responsibility tasks.
 - Defines clear execution order with explicit dependencies.
 - Provides verifiable completion criteria for each task.
@@ -28,12 +28,12 @@ Mandatory heading structure (all H2 under an H1 title):
 7. Risk Mitigation
 8. Rollback Strategy
 
-H1 Title Pattern: [TICKET-ID] Design (if a ticket ID exists; otherwise Use Case Design).
+H1 Title Pattern: [TICKET-ID] Plan (if a ticket ID exists; otherwise Use Case Plan).
 
 ## Section Definitions
 
 ### Implementation Overview
-- High-level approach summary derived from Discovery findings.
+- High-level approach summary derived from Research findings.
 - Key architectural decisions and patterns to be implemented.
 - Integration points with existing systems.
 - Performance and scalability considerations.
@@ -59,7 +59,7 @@ Format:
 
 ### Code References
 Comprehensive list of all files and locations that will be modified.
-Representation: fenced code block using Discovery phase syntax.
+Representation: fenced code block using Research phase syntax.
 Must include:
 - New files to be created
 - Existing files requiring modification
@@ -75,14 +75,14 @@ Detailed testing strategy for implementation validation:
 - Regression test considerations
 
 ### FACTS Scale Output
-Use the **FACTS Scale** (Feasibility, Atomicity, Clarity, Testability, Size) for design validation:
+Use the **FACTS Scale** (Feasibility, Atomicity, Clarity, Testability, Size) for planning validation:
 - **Feasibility**: Tasks are achievable with available resources and skills
 - **Atomicity**: Each task has single, clear responsibility
 - **Clarity**: Task descriptions provide unambiguous direction
 - **Testability**: Completion criteria are verifiable
 - **Size**: Task boundaries are well-defined and appropriately sized
 
-Apply the FACTS Scale for Design phase validation. Summarized scoring table + pass/fail decision required.
+Apply the FACTS Scale for Plan phase validation. Summarized scoring table + pass/fail decision required.
 
 For complete FACTS Scale criteria, scoring rules, and examples: [../scales/facts-scale.md](../scales/facts-scale.md)
 
@@ -111,7 +111,7 @@ For complete FACTS Scale criteria, scoring rules, and examples: [../scales/facts
 - Service deployment rollback plans
 
 ## Code Reference Syntax
-Identical to Discovery phase syntax:
+Identical to Research phase syntax:
 
 Single location:
 path/to/file.ext:LINE or path/to/file.ext:LINE:COL
@@ -137,7 +137,7 @@ Fenced code block (```), one entry per line, ordered by implementation sequence.
 ## Workflow
 ```mermaid
 flowchart TD
-  A([Start: Discovery Output]) --> B[Analyze Requirements]
+  A([Start: Research Output]) --> B[Analyze Requirements]
   B --> C[Define Implementation Phases]
   C --> D[Break Down Into Atomic Tasks]
   D --> E[Map Code References]
@@ -145,7 +145,7 @@ flowchart TD
   F --> G[Apply FACTS Scoring]
   G --> H{Pass FACTS Scale?}
   H -- No --> C
-  H -- Yes --> I[Done: Design Complete]
+  H -- Yes --> I[Done: Plan Complete]
 ```
 
 ## Task Sizing Guidelines
@@ -156,9 +156,9 @@ flowchart TD
 
 ## Failure Handling
 
-Design phase failures are classified and handled according to FACTS Scale scores:
+Plan phase failures are classified and handled according to FACTS Scale scores:
 - **Minor Failure**: FACTS scores 2.8-2.9 (single iteration task refinement)
-- **Major Failure**: FACTS scores 2.0-2.7 (return to Discovery phase)
+- **Major Failure**: FACTS scores 2.0-2.7 (return to Research phase)
 - **Critical Failure**: FACTS scores <2.0 (leadership escalation)
 
 Additional triggers include task breakdown failure (non-atomic tasks) and dependency deadlock (circular dependencies).
@@ -188,8 +188,8 @@ F: 4  A: 2  C: 3  T: 3  S: 3  Mean: 3.00  --> PASS
 F: 2  A: 3  C: 3  T: 3  S: 3  Mean: 2.80  --> FAIL (Mean < 3.00)  (Restart)
 ```
 
-## Handoff Contract to Delivery Phase
-Delivery phase receives:
+## Handoff Contract to Implement Phase
+Implement phase receives:
 - Final design.md with FACTS pass indicators
 - Complete task breakdown with checkboxes
 - Normalized code references for all changes
@@ -198,7 +198,7 @@ Delivery phase receives:
 - Dependency ordering for parallel execution
 
 ## Anti-Goals
-- Writing actual production code (leave to Delivery)
+- Writing actual production code (leave to Implement)
 - Making implementation decisions better left to coding agents
 - Over-specifying solutions that constrain implementation creativity
 - Creating tasks too large for single AI agent sessions

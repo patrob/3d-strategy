@@ -1,10 +1,10 @@
-# Delivery
+# Implement
 
 ## Purpose
-Execute the validated technical implementation plan from the Design phase by systematically completing atomic tasks, ensuring code quality at each step, and producing production-ready code that meets all specifications. Goal: transform the FACTS-qualified task breakdown into working, tested, and deployable code.
+Execute the validated technical implementation plan from the Plan phase by systematically completing atomic tasks, ensuring code quality at each step, and producing production-ready code that meets all specifications. Goal: transform the FACTS-qualified task breakdown into working, tested, and deployable code.
 
 ## Primary Objective
-Execute the Design phase output by:
+Execute the Plan phase output by:
 - Implementing each atomic task in proper sequence or parallel groupings.
 - Validating build, lint, and test success after each task completion.
 - Tracking progress through checkbox completion in the design document.
@@ -23,14 +23,14 @@ No output artifact under normal execution.
 
 ## Failure Handling
 
-Delivery phase failures are classified and handled according to task execution outcomes:
+Implement phase failures are classified and handled according to task execution outcomes:
 - **Minor Failure**: Individual task quality gate failures (build/lint/test)
 - **Major Failure**: 2+ consecutive task failures or critical path blocked with no clear resolution
 - **Critical Failure**: 3+ consecutive failures, security issues, or extended blocks without resolution
 
 **Quality Gates**: Each task must pass build → lint → test before completion. Failed gates trigger appropriate failure response.
 
-**Catastrophic Failure Output**: Critical failures generate delivery-postmortem.md at thoughts/[problem-short-name]/delivery-postmortem.md
+**Catastrophic Failure Output**: Critical failures generate implement-postmortem.md at thoughts/[problem-short-name]/implement-postmortem.md
 
 For complete failure handling procedures, escalation timelines, recovery paths, and postmortem requirements, see: [Failure Handling Framework](../README.md#failure-handling-framework)
 
@@ -99,7 +99,7 @@ For each phase in design.md:
 ## Implementation Workflow Diagram
 ```mermaid
 flowchart TD
-  A([Start: Design Document]) --> B[Parse Task List]
+  A([Start: Plan Document]) --> B[Parse Task List]
   B --> C[Select Next Task]
   C --> D[Implement Task]
   D --> E[Run Quality Gates<br/>Build → Lint → Test]
@@ -108,10 +108,10 @@ flowchart TD
   F -- No --> H[Apply Failure Handling<br/>Per Centralized Framework]
   H --> I{Continue or Escalate?}
   I -- Continue --> E
-  I -- Escalate --> J[Return to Design/Discovery<br/>or Generate Postmortem]
+  I -- Escalate --> J[Return to Plan/Research<br/>or Generate Postmortem]
   G --> K{More Tasks?}
   K -- Yes --> C
-  K -- No --> L[Done: Delivery Complete]
+  K -- No --> L[Done: Implement Complete]
 ```
 
 *For detailed failure criteria, escalation procedures, and recovery paths, see [Failure Handling Framework](../README.md#failure-handling-framework)*
@@ -139,36 +139,36 @@ flowchart TD
 ### Test Execution Requirements
 - Run full test suite after each task (unless TDD "Red" phase)
 - Include unit, integration, and e2e tests as defined
-- New tests from Design phase must be implemented and passing
+- New tests from Plan phase must be implemented and passing
 - Regression tests must continue passing
 
 ### Code Standards
 - Follow existing codebase conventions
 - Maintain consistent formatting via linter
 - Preserve architectural patterns
-- No divergence from Design specifications
+- No divergence from Plan specifications
 
 ## Postmortem Generation
 
-When catastrophic failure occurs, generate delivery-postmortem.md with:
+When catastrophic failure occurs, generate implement-postmortem.md with:
 - Clear identification of the failed task and phase
 - Complete error details and system state at failure
 - Root cause analysis
 - Recommended solutions and next steps
-- Context needed to restart the 3D Strategy process if required
+- Context needed to restart the RPI Strategy process if required
 
 ## Anti-Goals
 - Don't refactor beyond what's specified in the tasks
 - Don't add features not in the task list
-- Don't modify the Design document except for checking off completed tasks
+- Don't modify the Plan document except for checking off completed tasks
 - Don't complete multiple phases unless specified to do so
 - Don't skip quality gates even under time pressure
 - Don't leave tasks partially implemented
 - Don't proceed with failing tests
-- Don't implement optimizations not in the Design
+- Don't implement optimizations not in the Plan
 
 ## Handoff Contract Upon Completion
-Delivery phase completes with:
+Implement phase completes with:
 - All tasks in design.md marked complete with [x]
 - All tests passing (unit, integration, e2e)
 - Build successful with no errors
@@ -178,5 +178,5 @@ Delivery phase completes with:
 - Documentation updates if specified in tasks
 
 ## Reference
-Design artifact: thoughts/[problem-short-name]/design.md
-FACTS validation: [FACTS Scale for Design](../scales/facts-scale.md)
+Plan artifact: thoughts/[problem-short-name]/design.md
+FACTS validation: [FACTS Scale for Plan](../scales/facts-scale.md)

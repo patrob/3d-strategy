@@ -1,7 +1,7 @@
-# Discovery
+# Research
 
 ## Purpose
-Establish a high‑fidelity, action‑ready understanding of a problem (ticket / user story / change request) by clarifying scope, mapping affected code surfaces, gathering internal and external technical context, and synthesizing it into a single durable Markdown artifact for the Design phase. Goal: remove ambiguity before any solutioning.
+Establish a high‑fidelity, action‑ready understanding of a problem (ticket / user story / change request) by clarifying scope, mapping affected code surfaces, gathering internal and external technical context, and synthesizing it into a single durable Markdown artifact for the Plan phase. Goal: remove ambiguity before any solutioning.
 
 ## Primary Objective
 Convert an initial problem statement into a validated, FAR-qualified (Factual, Actionable, Relevant) research document that:
@@ -24,7 +24,7 @@ Mandatory heading structure (all H2 under an H1 title):
 7. Assumptions  
 8. Out of Scope  
 
-H1 Title Pattern: [TICKET-ID] Discovery (if a ticket ID exists; otherwise Use Case Discovery).
+H1 Title Pattern: [TICKET-ID] Research (if a ticket ID exists; otherwise Use Case Research).
 
 ## Section Definitions
 
@@ -45,16 +45,16 @@ Representation: fenced code block, one reference per line (see “Code Reference
 - Use triple backtick code fences inside this section; label language.
 
 ### FAR Scale Output
-Use the **FAR Scale** (Factual, Actionable, Relevant) for code-focused validation during Discovery:
+Use the **FAR Scale** (Factual, Actionable, Relevant) for code-focused validation during Research:
 - **Factual**: Evidence-based claims with verifiable code references
 - **Actionable**: Clear next steps for implementation
 - **Relevant**: Solution addresses core user needs and constraints
 
-Apply the FAR Scale for Discovery phase validation. Summarized scoring table + pass/fail decision required.
+Apply the FAR Scale for Research phase validation. Summarized scoring table + pass/fail decision required.
 
 For complete FAR Scale criteria, scoring rules, and examples: [../scales/far-scale.md](../scales/far-scale.md)
 
-*For design validation in the next phase, see the FACTS Scale in Design.md*
+*For planning validation in the next phase, see the FACTS Scale in Design.md*
 
 ### Testing Strategy
 Early hypotheses about:
@@ -64,7 +64,7 @@ Early hypotheses about:
 - Repro steps if defect
 - Risk areas needing characterization tests
 
-### Potential Design Pattern Recommendations
+### Potential Plan Pattern Recommendations
 Candidate architectural or code-level patterns (e.g. Strategy, Adapter, CQRS, Guard Clauses) with rationale and internal exemplars if they exist.
 
 ### Assumptions
@@ -119,7 +119,7 @@ flowchart TD
   F --> G[Apply FAR Scoring]
   G --> H{Pass FAR Scale?}
   H -- No --> B
-  H -- Yes --> I[Done: Discovery Complete]
+  H -- Yes --> I[Done: Research Complete]
 ```
 
 ## Workflow Parallel (Claude Code, Sub Agents)
@@ -135,7 +135,7 @@ flowchart TD
   F --> G[Apply FAR Scoring]
   G --> H{Pass FAR Scale?}
   H -- No --> B
-  H -- Yes --> I[Done: Discovery Complete]
+  H -- Yes --> I[Done: Research Complete]
 ```
 
 Loop Trigger:
@@ -149,9 +149,9 @@ Any FAR dimension failing threshold → restart at Clarify (retaining previously
 
 ## Failure Handling
 
-Discovery phase failures are classified and handled according to FAR Scale scores:
+Research phase failures are classified and handled according to FAR Scale scores:
 - **Minor Failure**: FAR scores 3.5-3.9 (single iteration refinement)
-- **Major Failure**: FAR scores 2.0-3.4 (restart Discovery phase)
+- **Major Failure**: FAR scores 2.0-3.4 (restart Research phase)
 - **Critical Failure**: FAR scores <2.0 (leadership escalation)
 
 For complete failure handling procedures, escalation timelines, recovery paths, and postmortem requirements, see: [Failure Handling Framework](../README.md#failure-handling-framework)
@@ -173,8 +173,8 @@ F: 4  A: 3  R: 4  Mean: 3.67  --> FAIL (Mean < 4.00)  (Restart)
 F: 4  A: 4  R: 4  Mean: 4.00  --> PASS
 ```
 
-## Handoff Contract to Design Phase
-Design phase receives:
+## Handoff Contract to Plan Phase
+Plan phase receives:
 - Final discovery.md
 - FAR pass indicators
 - Set of normalized code references

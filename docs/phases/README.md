@@ -1,15 +1,15 @@
-3D Strategy Phases
+RPI Strategy Phases
 ===================
 
-Concise, repeatable flow for moving an idea from fuzzy problem space to operating, measured reality. The three core phases — Discovery, Design, Delivery — keep discovery, design, and delivery cleanly separated while maintaining tight feedback loops.
+Concise, repeatable flow for moving an idea from fuzzy problem space to operating, measured reality. The three core phases — Research, Plan, Implement — keep research, planning, and implementation cleanly separated while maintaining tight feedback loops.
 
 Quick Links
 -----------
 | Phase | Purpose (1‑liner) | Primary Outputs |
 |-------|-------------------|------------------|
-| [Discovery](Discovery.md) | Build context & insight | Problem framing, users, constraints, option set |
-| [Design](Design.md) | Decide what to do & how | Chosen solution, scope, sequencing, resourcing, success metrics |
-| [Delivery](Delivery.md) | Ship & learn | Working increments, telemetry, learnings, deltas |
+| [Research](Discovery.md) | Build context & insight | Problem framing, users, constraints, option set |
+| [Plan](Design.md) | Decide what to do & how | Chosen solution, scope, sequencing, resourcing, success metrics |
+| [Implement](Delivery.md) | Ship & learn | Working increments, telemetry, learnings, deltas |
 
 Why This Exists
 ---------------
@@ -17,28 +17,28 @@ Reduce churn, hidden assumptions, and premature solutioning. Each phase has a cl
 
 Phase Overviews
 ---------------
-### 1. Discovery
+### 1. Research
 Goal: Convert uncertainty into a structured understanding of problem, users, constraints, and viable solution approaches.
-You leave Discovery with: a crisply stated problem, success definition, option tradeoffs, and a recommended direction (NOT a detailed build plan yet).
+You leave Research with: a crisply stated problem, success definition, option tradeoffs, and a recommended direction (NOT a detailed build plan yet).
 
-### 2. Design
+### 2. Plan
 Goal: Turn the selected direction into an executable path. Slice scope, define architecture/approach, surface risks, establish metrics & checkpoints.
-You leave Design with: bounded scope, milestone map, resource assumptions, risk register, and measurable success criteria.
+You leave Plan with: bounded scope, milestone map, resource assumptions, risk register, and measurable success criteria.
 
-### 3. Delivery
+### 3. Implement
 Goal: Deliver smallest meaningful slices to production (or realistic environments) fast, measure, adapt.
-You leave Delivery when: agreed scope is shipped OR a pivot/kill decision is justified by data.
+You leave Implement when: agreed scope is shipped OR a pivot/kill decision is justified by data.
 
 Flow (Idealized)
 ----------------
 ```
 	Ambiguity
 		↓
-  [Discovery]
+  [Research]
 		↓ (problem framed, option chosen)
-	 [Design]
+	 [Plan]
 		↓ (scope + path locked)
- [Delivery] ↺ (iterate with data)
+ [Implement] ↺ (iterate with data)
 		↓
 	Outcome / Next Bet
 ```
@@ -47,7 +47,7 @@ Gating Checklist
 ----------------
 Use these to confirm you are *truly* done with a phase:
 
-## Discovery → Design Success Criteria
+## Research → Plan Success Criteria
 
 **Required Artifacts:**
 - Problem statement (50-200 words) validated against [FAR scale](../scales/far-scale.md) (Mean ≥4.00)
@@ -69,7 +69,7 @@ Use these to confirm you are *truly* done with a phase:
 - Resource requirements exceed project constraints by >50%
 - Technical constraints create circular dependencies
 
-## Design → Delivery Success Criteria
+## Plan → Implement Success Criteria
 
 **Required Artifacts:**
 - Task breakdown with all individual tasks as atomic units (single command calls, file edits, etc.)
@@ -91,19 +91,19 @@ Use these to confirm you are *truly* done with a phase:
 - Circular dependencies discovered in task graph
 - Critical path >150% of original timeline estimate
 
-## Delivery → Close/Next Success Criteria
+## Implement → Close/Next Success Criteria
 
 **Required Artifacts:**
 - All agreed scope delivered OR formal scope change approved by stakeholders
 - Metrics dashboard with baseline vs. actual performance data
-- Post-delivery review documenting what worked, what missed, key learnings
+- Post-implementation review documenting what worked, what missed, key learnings
 - Backlog triage with items categorized (Now/Next/Later/Drop) and ownership
 - Production handoff documentation (if ongoing operations required)
 
 **Validation Checkpoints:**
-- [ ] Deliverables pass acceptance criteria from Design phase
+- [ ] Deliverables pass acceptance criteria from Plan phase
 - [ ] Metrics targets achieved OR variance explained with stakeholder agreement
-- [ ] Performance meets technical constraints defined in Discovery
+- [ ] Performance meets technical constraints defined in Research
 - [ ] Security and integration requirements validated in production environment
 - [ ] Knowledge transfer completed to operations/maintenance team
 
@@ -115,14 +115,14 @@ Use these to confirm you are *truly* done with a phase:
 
 Core Artifacts by Phase
 -----------------------
-- Discovery: Problem Brief, Option Matrix, Stakeholder / User Insights, Assumptions Log.
-- Design: Execution Design (milestones), Architecture/Design Sketch, Risk Register, Measurement Design.
-- Delivery: Increment Changelog, Metrics Dashboard / Snapshots, Decision Log, Post-Deliveryation Review.
+- Research: Problem Brief, Option Matrix, Stakeholder / User Insights, Assumptions Log.
+- Plan: Execution Plan (milestones), Architecture/Design Sketch, Risk Register, Measurement Design.
+- Implement: Increment Changelog, Metrics Dashboard / Snapshots, Decision Log, Post-Implementation Review.
 
 Working Cadences
 ----------------
-- Daily (Delivery): progress, blockers, metric anomalies.
-- Weekly (Discovery/Design): alignment sync / decision checkpoint (end early if not needed).
+- Daily (Implement): progress, blockers, metric anomalies.
+- Weekly (Research/Plan): alignment sync / decision checkpoint (end early if not needed).
 - Phase Transition Review: 30–45 min focused acceptance of gating checklist.
 
 Roles (Flexible Hats)
@@ -134,7 +134,7 @@ Roles (Flexible Hats)
 
 Adapting the Depth
 ------------------
-| Context | Discovery Depth | Design Depth | Delivery Mode |
+| Context | Research Depth | Plan Depth | Implement Mode |
 |---------|----------------|-----------|-----------------|
 | High risk / High impact | Deep | Deep | Tight iteration + telemetry |
 | Low risk / Routine | Lean (fast capture) | Minimal (just milestones) | Standard sprint rhythm |
@@ -142,7 +142,7 @@ Adapting the Depth
 
 How to Use This Folder
 ----------------------
-1. Start a new effort by creating a subfolder (e.g. `initiative-X/`) with `Discovery.md`, `Design.md`, `Delivery.md` templates copied or linked.
+1. Start a new effort by creating a subfolder (e.g. `initiative-X/`) with `Research.md`, `Plan.md`, `Implement.md` templates copied or linked.
 2. Fill only what adds clarity; avoid performative docs.
 3. Keep artifacts in-source (versioned) for transparency.
 4. Link decisions (PRs, issues) directly inside phase docs.
@@ -171,19 +171,19 @@ Each phase includes comprehensive failure handling with specific criteria, escal
 
 ### Failure Classification System
 **Minor Failures**: Single iteration fixes, local guidance needed
-- Discovery: FAR scores 3.5-3.9
-- Design: FACTS scores 2.8-2.9
-- Delivery: Individual task quality gate failures
+- Research: FAR scores 3.5-3.9
+- Plan: FACTS scores 2.8-2.9
+- Implement: Individual task quality gate failures
 
 **Major Failures**: Phase restart required, stakeholder consultation
-- Discovery: FAR scores 2.0-3.4, missing critical context
-- Design: FACTS scores 2.0-2.7, task breakdown insufficient
-- Delivery: 2+ consecutive task failures, critical path blocked with no clear resolution
+- Research: FAR scores 2.0-3.4, missing critical context
+- Plan: FACTS scores 2.0-2.7, task breakdown insufficient
+- Implement: 2+ consecutive task failures, critical path blocked with no clear resolution
 
 **Critical Failures**: Leadership escalation, project viability assessment
-- Discovery: FAR scores <2.0, fundamental problem misunderstanding
-- Design: FACTS scores <2.0, circular dependencies detected
-- Delivery: 3+ consecutive failures, security/integrity issues, >2 day blocks
+- Research: FAR scores <2.0, fundamental problem misunderstanding
+- Plan: FACTS scores <2.0, circular dependencies detected
+- Implement: 3+ consecutive failures, security/integrity issues, >2 day blocks
 
 ### Escalation Timeline
 | Failure Level | Response Time | Action Required | Decision Authority |
@@ -194,9 +194,9 @@ Each phase includes comprehensive failure handling with specific criteria, escal
 
 ### Recovery Paths
 **Phase Transitions on Failure**:
-- Discovery ← Design: When design reveals insufficient problem understanding
-- Discovery ← Delivery: When implementation reveals fundamental scope issues
-- Design ← Delivery: When task breakdown proves inadequate for implementation
+- Research ← Plan: When planning reveals insufficient problem understanding
+- Research ← Implement: When implementation reveals fundamental scope issues
+- Plan ← Implement: When task breakdown proves inadequate for implementation
 
 **Preservation Rules**:
 - Always preserve validated artifacts from higher phases
@@ -205,17 +205,17 @@ Each phase includes comprehensive failure handling with specific criteria, escal
 
 ### Postmortem Requirements
 Critical failures generate standardized postmortem documents:
-- **discovery-postmortem.md**: Problem understanding gaps, context needs
-- **design-postmortem.md**: Task breakdown analysis, architectural concerns
-- **delivery-postmortem.md**: Implementation blockers, technical constraints
+- **research-postmortem.md**: Problem understanding gaps, context needs
+- **plan-postmortem.md**: Task breakdown analysis, architectural concerns
+- **implement-postmortem.md**: Implementation blockers, technical constraints
 
 This framework provides complete failure handling guidance for all phases. Individual phase documents reference this centralized framework for consistent application.
 
 Anti-Patterns to Avoid
 ----------------------
-- Skipping Discovery because "solution is obvious" (later rework proves it wasn't).
-- Over-specifying Design (faux certainty) in high-unknown spaces.
-- Giant Delivery batch with no intermediate validation.
+- Skipping Research because "solution is obvious" (later rework proves it wasn't).
+- Over-specifying Plan (faux certainty) in high-unknown spaces.
+- Giant Implement batch with no intermediate validation.
 - Metrics added after shipping (missed baselines).
 - Proceeding with failed validation scores to "make progress" (compounds problems).
 - Treating all failures the same (minor issues get over-escalated, critical issues get under-addressed).
@@ -237,5 +237,5 @@ Feedback / Improvements
 Open an issue or PR: propose concise changes with rationale; prefer examples over abstract suggestions.
 
 ---
-Fast Start TL;DR: Frame the problem (Discovery) → Decide & slice (Design) → Ship small, measure, learn (Delivery). Don’t promote a phase until its exit checklist is undeniably met.
+Fast Start TL;DR: Frame the problem (Research) → Decide & slice (Plan) → Ship small, measure, learn (Implement). Don’t promote a phase until its exit checklist is undeniably met.
 
