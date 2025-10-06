@@ -86,7 +86,7 @@ Apply the FACTS Scale for Plan phase validation. Summarized scoring table + pass
 
 For complete FACTS Scale criteria, scoring rules, and examples: [../scales/facts-scale.md](../scales/facts-scale.md)
 
-*For code validation in the previous phase, see the FAR Scale in Discovery.md*
+*For code validation in the previous phase, see the FAR Scale in Research.md*
 
 
 ### Dependencies & Sequencing

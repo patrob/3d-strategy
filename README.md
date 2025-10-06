@@ -23,8 +23,8 @@ This repository documents the RPI Strategy methodology for engineering teams wor
 
 ### Core Framework
 - **[RPI Strategy Phases](docs/phases/README.md)** - Complete guide to Research → Plan → Implement
-  - [Research Phase](docs/phases/Discovery.md) - Build context & insight
-  - [Plan Phase](docs/phases/Design.md) - Decide what to do & how
+  - [Research Phase](docs/phases/Research.md) - Build context & insight
+  - [Plan Phase](docs/phases/Plan.md) - Decide what to do & how
   - [Implement Phase](docs/phases/Implement.md) - Ship & learn
 
 ### Quality Framework

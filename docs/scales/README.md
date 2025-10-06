@@ -38,5 +38,5 @@ For detailed scoring criteria and examples, see [facts-scale.md](./facts-scale.m
 
 ## Cross-References
 
-- Research phase conceptual guidance: [../phases/Discovery.md](../phases/Discovery.md)
-- Plan phase conceptual guidance: [../phases/Design.md](../phases/Design.md)
+- Research phase conceptual guidance: [../phases/Research.md](../phases/Research.md)
+- Plan phase conceptual guidance: [../phases/Plan.md](../phases/Plan.md)

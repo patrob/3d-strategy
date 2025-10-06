@@ -54,7 +54,7 @@ Apply the FAR Scale for Research phase validation. Summarized scoring table + pa
 
 For complete FAR Scale criteria, scoring rules, and examples: [../scales/far-scale.md](../scales/far-scale.md)
 
-*For planning validation in the next phase, see the FACTS Scale in Design.md*
+*For planning validation in the next phase, see the FACTS Scale in Plan.md*
 
 ### Testing Strategy
 Early hypotheses about:

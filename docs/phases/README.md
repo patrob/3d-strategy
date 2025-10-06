@@ -7,8 +7,8 @@ Quick Links
 -----------
 | Phase | Purpose (1‑liner) | Primary Outputs |
 |-------|-------------------|------------------|
-| [Research](Discovery.md) | Build context & insight | Problem framing, users, constraints, option set |
-| [Plan](Design.md) | Decide what to do & how | Chosen solution, scope, sequencing, resourcing, success metrics |
+| [Research](Research.md) | Build context & insight | Problem framing, users, constraints, option set |
+| [Plan](Plan.md) | Decide what to do & how | Chosen solution, scope, sequencing, resourcing, success metrics |
 | [Implement](Implement.md) | Ship & learn | Working increments, telemetry, learnings, deltas |
 
 Why This Exists
