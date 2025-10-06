@@ -25,7 +25,7 @@ This repository documents the RPI Strategy methodology for engineering teams wor
 - **[RPI Strategy Phases](docs/phases/README.md)** - Complete guide to Research → Plan → Implement
   - [Research Phase](docs/phases/Discovery.md) - Build context & insight
   - [Plan Phase](docs/phases/Design.md) - Decide what to do & how
-  - [Implement Phase](docs/phases/Delivery.md) - Ship & learn
+  - [Implement Phase](docs/phases/Implement.md) - Ship & learn
 
 ### Quality Framework
 - **[Validation Scales](docs/scales/README.md)** - Improve GenAI and human results using structured validation
