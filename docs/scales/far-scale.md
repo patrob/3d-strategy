@@ -1,6 +1,6 @@
-# FAR Scale (Discovery Phase Validation)
+# FAR Scale (Research Phase Validation)
 
-The FAR Scale validates Discovery phase outputs by measuring three critical dimensions of code-focused investigation. Discovery findings must achieve specific pass criteria across all dimensions to proceed to the Design phase.
+The FAR Scale validates Research phase outputs by measuring three critical dimensions of code-focused investigation. Research findings must achieve specific pass criteria across all dimensions to proceed to the Plan phase.
 
 ## Validation Rules
 
@@ -12,8 +12,8 @@ The FAR Scale validates Discovery phase outputs by measuring three critical dime
 - **Precision**: All scores calculated to 2 decimal places (no additional rounding)
 
 ### Failure Handling
-- **On Failure**: Restart full Discovery workflow (clarify → analyze → validate → FAR)
-- **Scoring Actor**: Discovery Agent (automated) with optional human override
+- **On Failure**: Restart full Research workflow (clarify → analyze → validate → FAR)
+- **Scoring Actor**: Research Agent (automated) with optional human override
 - **Mean Calculation**: Arithmetic average of F, A, R dimensions
 
 ## Scoring Dimensions
