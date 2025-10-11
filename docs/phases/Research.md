@@ -12,7 +12,7 @@ Convert an initial problem statement into a validated, FAR-qualified (Factual, A
 - States assumptions and explicitly excludes out‑of‑scope areas.
 
 ## Output Artifact
-Location: thoughts/[problem-short-name]/discovery.md  
+Location: rpi/[problem-short-name]/research.md  
 No frontmatter.  
 Mandatory heading structure (all H2 under an H1 title):
 1. Problem Context  
@@ -92,7 +92,7 @@ Entire file (no line):
 path/to/file.ext
 
 Ordering:
-Preserve discovery / anticipated diff sequence (not alphabetical).
+Preserve research / anticipated diff sequence (not alphabetical).
 
 Presentation:
 Fenced code block (```), one entry per line.
@@ -175,7 +175,7 @@ F: 4  A: 4  R: 4  Mean: 4.00  --> PASS
 
 ## Handoff Contract to Plan Phase
 Plan phase receives:
-- Final discovery.md
+- Final research.md
 - FAR pass indicators
 - Set of normalized code references
 - Open assumptions requiring validation tasks
@@ -185,7 +185,7 @@ Plan phase receives:
 - Proposing final solution architecture
 - Writing production code
 - Performing refactors beyond evidentiary inspection
-- Estimating delivery timelines
+- Estimating implementation timelines
 
 ## Reference
 FAR rubric: [FAR Scale](../scales/far-scale.md)

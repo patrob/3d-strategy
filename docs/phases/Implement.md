@@ -12,12 +12,12 @@ Execute the Plan phase output by:
 - Producing a fully functional solution ready for deployment.
 
 ## Input Artifact
-Location: thoughts/[problem-short-name]/design.md
+Location: rpi/[problem-short-name]/plan.md
 Requirements: Must have passed FACTS Scale validation (Mean >= 3.00)
 
 ## Output
 No output artifact under normal execution.
-- Tasks in design.md marked complete (`- [ ]` -> `- [x]`)
+- Tasks in plan.md marked complete (`- [ ]` -> `- [x]`)
 - Implemented, tested, production-ready code
 - All build, lint, and test suites passing
 
@@ -30,14 +30,14 @@ Implement phase failures are classified and handled according to task execution 
 
 **Quality Gates**: Each task must pass build → lint → test before completion. Failed gates trigger appropriate failure response.
 
-**Catastrophic Failure Output**: Critical failures generate implement-postmortem.md at thoughts/[problem-short-name]/implement-postmortem.md
+**Catastrophic Failure Output**: Critical failures generate implement-postmortem.md at rpi/[problem-short-name]/implement-postmortem.md
 
 For complete failure handling procedures, escalation timelines, recovery paths, and postmortem requirements, see: [Failure Handling Framework](../README.md#failure-handling-framework)
 
 ## Task Execution Strategy
 
 ### Serial Execution (Primary Approach)
-Execute tasks sequentially as listed in design.md. Each task must complete successfully before proceeding to the next. This ensures:
+Execute tasks sequentially as listed in plan.md. Each task must complete successfully before proceeding to the next. This ensures:
 - Clear progress tracking
 - Immediate issue identification
 - No compounding errors
@@ -46,14 +46,14 @@ Execute tasks sequentially as listed in design.md. Each task must complete succe
 > **Parallel Execution Note:** Tools like Claude Code can execute independent tasks simultaneously using sub-agents. Tasks marked with `[P]` in the same phase can run in parallel if they affect different files and have no shared dependencies. Maximum 5 parallel tasks at once.
 
 ### Task Identification
-- Tasks are defined as checkbox items in design.md
+- Tasks are defined as checkbox items in plan.md
 - Format: `- [ ] Task description`
 - Phase boundaries separate task groups
 - Tasks within a phase are executed in order
 
 ### Dependency Management
 - Respect phase boundaries - complete all tasks in a phase before proceeding
-- Within a phase, honor explicit dependencies noted in design.md
+- Within a phase, honor explicit dependencies noted in plan.md
 - Each task builds on the successful completion of the previous task
 
 ### Quality Gates
@@ -71,13 +71,13 @@ If any quality gate fails:
 ## Implementation Workflow
 
 ### Pre-Execution Validation
-1. Verify design.md exists at expected location
+1. Verify plan.md exists at expected location
 2. Confirm FACTS Scale validation passed
 3. Parse task breakdown and identify phases
 4. Validate all referenced files are accessible
 
 ### Task Execution Loop
-For each phase in design.md:
+For each phase in plan.md:
 1. Identify all tasks in current phase
 2. Execute tasks sequentially
 3. For each task:
@@ -90,10 +90,10 @@ For each phase in design.md:
 > **Parallel Execution Note:** When using tools with sub-agent capabilities, tasks marked `[P]` can be batched and executed simultaneously, then results aggregated before proceeding.
 
 ### Completion Tracking
-- Real-time updates to design.md checkboxes
+- Real-time updates to plan.md checkboxes
 - Each successful task: `- [ ]` -> `- [x]`
 - Failed tasks remain unchecked with noted blockers
-- Progress visible through design.md state
+- Progress visible through plan.md state
 
 
 ## Implementation Workflow Diagram
@@ -132,7 +132,7 @@ flowchart TD
 
 ### Continuous Validation
 - Every task must pass build, lint, and tests before marking complete
-- No accumulation of technical debt during delivery
+- No accumulation of technical debt during implementation
 - Immediate remediation of quality issues
 - No proceeding with broken states
 
@@ -169,7 +169,7 @@ When catastrophic failure occurs, generate implement-postmortem.md with:
 
 ## Handoff Contract Upon Completion
 Implement phase completes with:
-- All tasks in design.md marked complete with [x]
+- All tasks in plan.md marked complete with [x]
 - All tests passing (unit, integration, e2e)
 - Build successful with no errors
 - Lint passing with no violations
@@ -178,5 +178,5 @@ Implement phase completes with:
 - Documentation updates if specified in tasks
 
 ## Reference
-Plan artifact: thoughts/[problem-short-name]/design.md
+Plan artifact: rpi/[problem-short-name]/plan.md
 FACTS validation: [FACTS Scale for Plan](../scales/facts-scale.md)
