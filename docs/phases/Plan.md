@@ -12,11 +12,11 @@ Convert Research phase output into a FACTS-qualified technical implementation pl
 - Maintains consistent effort sizing across task groupings.
 
 ## Input Artifact
-Location: thoughts/[problem-short-name]/discovery.md
+Location: rpi/[problem-short-name]/research.md
 Requirements: Must have passed FAR Scale validation (F >= 4, A >= 3, R >= 3, Mean >= 4.00)
 
 ## Output Artifact
-Location: thoughts/[problem-short-name]/design.md
+Location: rpi/[problem-short-name]/plan.md
 No frontmatter.
 Mandatory heading structure (all H2 under an H1 title):
 1. Implementation Overview
@@ -190,7 +190,7 @@ F: 2  A: 3  C: 3  T: 3  S: 3  Mean: 2.80  --> FAIL (Mean < 3.00)  (Restart)
 
 ## Handoff Contract to Implement Phase
 Implement phase receives:
-- Final design.md with FACTS pass indicators
+- Final plan.md with FACTS pass indicators
 - Complete task breakdown with checkboxes
 - Normalized code references for all changes
 - Testing validation criteria for each task

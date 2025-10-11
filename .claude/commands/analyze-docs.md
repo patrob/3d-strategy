@@ -52,4 +52,4 @@ Launch the documentation-critic agent with:
 
 Begin by discovering all documentation files, then systematically analyze each for the criteria above. Exclude the `.claude` folder from analysis.
 
-Output documentation in a file `./thoughts/docs-analysis.md`
+Output documentation in a file `./rpi/docs-analysis.md`
