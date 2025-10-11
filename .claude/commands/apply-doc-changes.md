@@ -6,7 +6,7 @@ description: Critically analyze repository documentation for clarity, completene
 
 ## Variables
 
-DOCS_ANALYSIS_FILE = $ARGUMENTS // use `./thoughts/docs-analysis.md`
+DOCS_ANALYSIS_FILE = $ARGUMENTS // use `./rpi/docs-analysis.md`
 
 ## Gather Context
 - Read thoughts file !`cat DOCS_ANALYSIS_FILE`
@@ -57,4 +57,4 @@ Launch the documentation-critic agent with:
 
 Begin by discovering all documentation files, then systematically analyze each for the criteria above. Exclude the `.claude` folder from analysis.
 
-Output documentation in a file `./thoughts/docs-analysis.md`
+Output documentation in a file `./rpi/docs-analysis.md`
