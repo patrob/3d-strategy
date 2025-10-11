@@ -12,7 +12,7 @@ Convert Research phase output into a FACTS-qualified technical implementation pl
 - Maintains consistent effort sizing across task groupings.
 
 ## Input Artifact
-Location: rpi/[problem-short-name]/discovery.md
+Location: rpi/[problem-short-name]/research.md
 Requirements: Must have passed FAR Scale validation (F >= 4, A >= 3, R >= 3, Mean >= 4.00)
 
 ## Output Artifact
